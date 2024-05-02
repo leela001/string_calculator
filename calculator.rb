@@ -6,6 +6,9 @@ class Calculator
         # default delimiter
         delimitor = ","
 
+        # replacing the "\n" with default delimiter
+        str_input = str_input.gsub("\n", delimitor)
+
         # split the string input into an array of substrings using the delimiter
         substring_input = str_input.split(delimitor)
 

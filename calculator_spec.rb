@@ -22,5 +22,11 @@ RSpec.describe Calculator do
             res = calc.add("1,2,3,4,5")
             expect(res).to eq(15)
         end
+
+        it 'test when the input string contains \n' do
+            calc = StringCalculator.new
+            res = calc.addition("1\n2,3")
+            expect(res).to eq(6)
+        end
     end
 end
