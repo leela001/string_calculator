@@ -21,6 +21,14 @@ class Calculator
         # convert each substring to an integer and returns the integer array
         num_array = substring_input.map(&:to_i)
 
+        # check for the negative numbers
+        negative_numbers = num_array.select {|num| num < 0}
+
+        # it will throw an exception if the negative_numbers array contains numbers
+        if negative_numbers.any?
+            raise "negative numbers not allowed #{negative_numbers.join(',')}"
+        end
+
         # calculates the sum of integers
         num_array.sum
     end

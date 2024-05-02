@@ -34,5 +34,10 @@ RSpec.describe Calculator do
             res = calc.add("//;\n1;2")
             expect(res).to eq(3)
         end
+
+        it 'test when the input string contains negative numbers' do
+            calc = Calculator.new
+            expect { calc.add("-1,2,-3") }.to raise_exception(RuntimeError, "negative numbers not allowed -1,-3")
+        end
     end
 end
