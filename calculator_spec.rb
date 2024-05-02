@@ -24,14 +24,14 @@ RSpec.describe Calculator do
         end
 
         it 'test when the input string contains \n' do
-            calc = StringCalculator.new
-            res = calc.addition("1\n2,3")
+            calc = Calculator.new
+            res = calc.add("1\n2,3")
             expect(res).to eq(6)
         end
 
         it 'test when the input string starts with // and the delimiter is custom' do
-            calc = StringCalculator.new
-            res = calc.addition("//;\n1;2")
+            calc = Calculator.new
+            res = calc.add("//;\n1;2")
             expect(res).to eq(3)
         end
     end
